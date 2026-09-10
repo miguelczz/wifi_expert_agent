@@ -1,64 +1,64 @@
 <div align="center">
 
-# Agente Experto WiFi
+# WiFi Expert Agent
 
-**Analizador multi-agente y multimodal de redes Wi-Fi que transforma capturas de Wireshark en diagnósticos precisos mediante IA.**
+**Multi-agent, multimodal Wi-Fi network analyzer that turns Wireshark packet captures into precise AI-driven diagnostics.**
 
-> 🔒 **Nota de Confidencialidad & Propiedad Intelectual:**
-> El código fuente de este proyecto es de carácter privado y propiedad de **Tigo Colombia**. Este repositorio sirve únicamente como **Demostración Técnica de Arquitectura** para dar a conocer la funcionalidad, patrones de observabilidad e ingeniería del sistema.
+> 🔒 **Confidentiality & Intellectual Property Notice:**
+> The source code for this project is private and owned by **Tigo Colombia**. This repository serves only as a **Technical Architecture Showcase** to demonstrate the system's functionality, observability patterns, and engineering design.
 
 </div>
 
 ---
 
-## ¿Qué hace el Agente Experto en Wifi?
+## What does the WiFi Expert Agent do?
 
-Pipe recibe archivos de captura de red (`.pcap` / `.pcapng`) generados con **Wireshark** y los procesa mediante un sistema de agentes IA especializado que evalúa el comportamiento del protocolo 802.11k/v/r (Band Steering / Roaming WiFi):
+The WiFi expert agent receives network capture files (`.pcap` / `.pcapng`) generated with **Wireshark** and processes them through a specialized AI agent system that evaluates 802.11k/v/r protocol behavior (Band Steering / WiFi Roaming):
 
-- ✅ **Análisis automático de Band Steering** — evalúa BTM Support, Association, Effective Steering y KVR Standards
-- ✅ **Diagnóstico inteligente** — Groq (Llama 3.3), Gemini 2.0 Flash y GPT-4o con routing dinámico por costo y calidad
-- ✅ **Generación de reportes PDF** — listos para entregar, con gráficas de señal, eventos BTM y conclusiones técnicas
-- ✅ **Chat contextual** — el asistente Pipe responde preguntas sobre el análisis activo o sobre documentación técnica WiFi
-- ✅ **Análisis masivo** — procesa decenas de capturas en paralelo y permite descargar resultados como ZIP o PDF ejecutivo
-- ✅ **Observabilidad en tiempo real** — tracking de costos, latencias y trazas LLM por modelo y operación
+- ✅ **Automatic Band Steering analysis** — evaluates BTM Support, Association, Effective Steering, and KVR Standards
+- ✅ **Intelligent diagnostics** — Groq (Llama 3.3), Gemini 2.0 Flash, and GPT-4o with dynamic routing by cost and quality
+- ✅ **PDF report generation** — delivery-ready, with signal charts, BTM events, and technical conclusions
+- ✅ **Contextual chat** — the Pipe assistant answers questions about the active analysis or WiFi technical documentation
+- ✅ **Batch analysis** — processes dozens of captures in parallel and allows downloading results as a ZIP or executive PDF
+- ✅ **Real-time observability** — tracks cost, latency, and LLM traces per model and operation
 
 ---
 
-## 🖼️ Capturas de Pantalla
+## 🖼️ Screenshots
 
-### 1. Explorador de Trazas — Subida y procesamiento
+### 1. Trace Explorer — Upload and Processing
 
-> El usuario sube un `.pcapng`, selecciona el vendor, proyecto y MAC del cliente. El sistema procesa la captura con **tshark** y genera el análisis con IA.
+> The user uploads a `.pcapng` file, selects the vendor, project, and client MAC address. The system processes the capture with **tshark** and generates the AI-powered analysis.
 
 <div align="center">
-<img src="./assets/upload.png" alt="Explorador de Trazas" width="800">
+<img src="./assets/upload.png" alt="Trace Explorer" width="800">
 </div>
 
 ---
 
-### 2. Resultado de Análisis — Band Steering
+### 2. Analysis Result — Band Steering
 
-> Resultado inmediato del análisis: veredicto de cumplimiento técnico por criterio (BTM Support, Association, Effective Steering, KVR Standards).
+> Immediate analysis result: technical compliance verdict per criterion (BTM Support, Association, Effective Steering, KVR Standards).
 
 <div align="center">
-<img src="./assets/band_steering.png" alt="Resultado Band Steering" width="800">
+<img src="./assets/band_steering.png" alt="Band Steering Result" width="800">
 </div>
 
 ---
 
-### 3. Visualización de Cambios de Banda
+### 3. Band Change Visualization
 
-> Gráfica interactiva de señal RSSI en el tiempo, con marcadores de eventos BTM, transiciones de banda (2.4 GHz / 5 GHz) y umbrales configurables.
+> Interactive RSSI signal chart over time, with BTM event markers, band transitions (2.4 GHz / 5 GHz), and configurable thresholds.
 
 <div align="center">
-<img src="./assets/band_chart.png" alt="Gráfica de Cambios de Banda" width="800">
+<img src="./assets/band_chart.png" alt="Band Change Chart" width="800">
 </div>
 
 ---
 
-### 4. Wireshark Packet List — Vista de paquetes
+### 4. Wireshark Packet List — Packet View
 
-> Panel integrado que muestra los paquetes 802.11 extraídos de la captura: origen, destino, protocolo, banda y descripción del frame.
+> Integrated panel showing the 802.11 packets extracted from the capture: source, destination, protocol, band, and frame description.
 
 <div align="center">
 <img src="./assets/packet_list.png" alt="Wireshark Packet List" width="800">
@@ -66,144 +66,144 @@ Pipe recibe archivos de captura de red (`.pcap` / `.pcapng`) generados con **Wir
 
 ---
 
-### 5. Reporte PDF Generado
+### 5. Generated PDF Report
 
-> Reporte técnico generado automáticamente: executive summary, análisis técnico, métricas de steering, detección de BSSIDs, estándares KVR y conclusión final.
+> Automatically generated technical report: executive summary, technical analysis, steering metrics, BSSID detection, KVR standards, and final conclusion.
 
 <div align="center">
-<img src="./assets/report_pdf.png" alt="Reporte PDF" width="600">
+<img src="./assets/report_pdf.png" alt="PDF Report" width="600">
 </div>
 
 ---
 
-### 6. Modo Reporte — Asistente analizando el reporte activo
+### 6. Report Mode — Assistant Analyzing the Active Report
 
-> El **ReportAgent** accede directamente al análisis en pantalla. El usuario pregunta sobre el reporte actual y el agente extrae métricas, eventos BTM y conclusiones del análisis sin salir de la vista.
+> The **ReportAgent** accesses the on-screen analysis directly. The user asks about the current report, and the agent extracts metrics, BTM events, and conclusions from the analysis without leaving the view.
 
 <div align="center">
-<img src="./assets/analysis_chat.png" alt="Análisis con Chat Asistente" width="800">
+<img src="./assets/analysis_chat.png" alt="Analysis with Chat Assistant" width="800">
 </div>
 
 ---
 
-### 7. Modo RAG — Chat con documentación técnica WiFi
+### 7. RAG Mode — Chat with WiFi Technical Documentation
 
-> El **RAGAgent** responde usando la base de conocimiento interna. Busca en Qdrant los chunks más relevantes de la documentación técnica y los usa como contexto para generar una respuesta fundada. A la izquierda se muestra el **Dashboard de Observabilidad**, que extrae en tiempo real desde **Langfuse** las trazas de cada llamada LLM: operación, modelo utilizado, latencia e inversión en USD por llamada.
+> The **RAGAgent** answers using the internal knowledge base. It searches Qdrant for the most relevant technical documentation chunks and uses them as context to generate a grounded response. On the left, the Observability Dashboard displays real-time Langfuse traces for each LLM call: operation, model used, latency, and cost in USD per call.
 
 <div align="center">
-<img src="./assets/observability.png" alt="Observabilidad" width="800">
+<img src="./assets/observability.png" alt="Observability" width="800">
 </div>
 
 ---
 
-### 8. Modo RAG — Respuesta con filtros Wireshark
+### 8. RAG Mode — Response with Wireshark Filters
 
-> Otra consulta en **Modo RAG**: el usuario pide filtros de Wireshark para analizar frames de reasociación durante un roaming. El agente muestra su cadena de pensamiento antes de entregar la respuesta técnica con los filtros exactos.
+> Another query in RAG Mode: the user asks for Wireshark filters to analyze reassociation frames during a roaming event. The agent shows its chain of thought before delivering the technical response with the exact filters.
 
 <div align="center">
-<img src="./assets/chat_filters.png" alt="Chat técnico con filtros Wireshark" width="800">
+<img src="./assets/chat_filters.png" alt="Technical chat with Wireshark filters" width="800">
 </div>
 
 ---
 
-## ⚙️ Cómo funciona — Bajo el capó
+## ⚙️ How It Works — Under the Hood
 
-### Procesamiento de una captura PCAP
+### Processing a PCAP Capture
 
-Cuando el usuario sube un archivo `.pcap` o `.pcapng`, el backend ejecuta este pipeline:
+When the user uploads a `.pcap` or `.pcapng` file, the backend runs this pipeline:
 
 ```
 PCAP
   │
-  ├─ 1. WiresharkTool (tshark) — extrae frames 802.11
-  │      ├─ Beacon frames (info del AP, SSID, channel, band)
+  ├─ 1. WiresharkTool (tshark) — extracts 802.11 frames
+  │      ├─ Beacon frames (AP info, SSID, channel, band)
   │      ├─ BTM Request / Response (Band Steering)
   │      ├─ Probe Request / Response
   │      ├─ Association / Reassociation
   │      └─ Deauthentication
   │
-  ├─ 2. BTMAnalyzer — calcula métricas de Band Steering
-  │      ├─ Latencia de transiciones entre bandas
-  │      ├─ Tasa de aceptación de BTM (acceptance rate)
-  │      ├─ Distribución de tiempo en 2.4 GHz vs 5 GHz
-  │      ├─ Detección de sticky clients y roaming lento
-  │      └─ Verificación KVR (802.11k / 802.11v / 802.11r)
+  ├─ 2. BTMAnalyzer — computes Band Steering metrics
+  │      ├─ Band transition latency
+  │      ├─ BTM acceptance rate
+  │      ├─ Time distribution across 2.4 GHz vs 5 GHz
+  │      ├─ Sticky client and slow roaming detection
+  │      └─ KVR verification (802.11k / 802.11v / 802.11r)
   │
-  ├─ 3. LLM Analysis — genera insights técnicos
-  │      ├─ Evalúa cumplimiento de 802.11k/v/r
-  │      ├─ Identifica problemas y anomalías
-  │      └─ Produce recomendaciones de mejora
+  ├─ 3. LLM Analysis — generates technical insights
+  │      ├─ Evaluates 802.11k/v/r compliance
+  │      ├─ Identifies issues and anomalies
+  │      └─ Produces improvement recommendations
   │
-  └─ 4. Persistencia en 3 bases de datos en paralelo
-         ├─ PostgreSQL — análisis estructurado + metadata
-         ├─ Qdrant     — embeddings para búsqueda semántica futura
-         └─ FalkorDB   — grafo de topología (Cliente → AP, transiciones)
+  └─ 4. Persistence across 3 databases in parallel
+         ├─ PostgreSQL — structured analysis + metadata
+         ├─ Qdrant     — embeddings for future semantic search
+         └─ FalkorDB   — topology graph (Client → AP, transitions)
 ```
 
-### Sistema Multi-Agente
+### Multi-Agent System
 
-El núcleo de la IA es un **AgentDispatcher** que clasifica cada consulta antes de procesarla. El flujo es:
+The core of the AI is an **AgentDispatcher** that classifies each query before processing it. The flow is:
 
 ```
-Consulta del usuario
+User query
   │
-  ├─ SecurityTool       — valida que no haya inyección maliciosa
-  ├─ IntentClassifier   — detecta la intención (simple / rag / report / graph)
+  ├─ SecurityTool       — validates against malicious injection
+  ├─ IntentClassifier   — detects intent (simple / rag / report / graph)
   │
-  └─ Routing al agente especializado:
-       ├─ SimpleAgent   → LLM directo, sin contexto (respuesta < 2s)
-       ├─ RAGAgent      → busca en Qdrant, usa top-5 documentos como contexto
-       ├─ ReportAgent   → accede al análisis activo (PostgreSQL + embeddings)
-       └─ GraphAgent    → consulta la topología de red en FalkorDB (Cypher)
+  └─ Routing to the specialized agent:
+       ├─ SimpleAgent   → direct LLM call, no context (response < 2s)
+       ├─ RAGAgent      → searches Qdrant, uses top-5 documents as context
+       ├─ ReportAgent   → accesses the active analysis (PostgreSQL + embeddings)
+       └─ GraphAgent    → queries the network topology in FalkorDB (Cypher)
 ```
 
-Cada agente tiene su propio system prompt y conjunto de Skills, lo que reduce alucinaciones y optimiza el consumo de tokens.
+Each agent has its own system prompt and set of Skills, exposed as tools through a custom **Model Context Protocol (MCP)** layer, which reduces hallucinations and optimizes token usage. Before a response is returned, a **Judge System** validates and scores agent outputs for accuracy and relevance, filtering out low-quality responses.
 
-### Routing de Modelos LLM
+### LLM Model Routing
 
-El sistema no usa un único modelo: selecciona dinámicamente el proveedor según la tarea:
+The system doesn't rely on a single model: it dynamically selects the provider based on the task:
 
-| Tier       | Modelo               | Uso                                  |
-| ---------- | -------------------- | ------------------------------------ |
-| `routing`  | Groq · Llama-3.3-70b | Clasificación de intenciones         |
-| `cheap`    | Groq · Llama-3.3-70b | Conversación general                 |
-| `standard` | Gemini 2.0 Flash     | Análisis de capturas                 |
-| `quality`  | GPT-4o               | Análisis complejos de alta precisión |
-| `fallback` | GPT-4o-mini          | Si el proveedor principal falla      |
+| Tier       | Model                | Use Case                              |
+| ---------- | --------------------- | -------------------------------------- |
+| `routing`  | Groq · Llama-3.3-70b | Intent classification                  |
+| `cheap`    | Groq · Llama-3.3-70b | General conversation                   |
+| `standard` | Gemini 2.0 Flash     | Capture analysis                       |
+| `quality`  | GPT-4o               | Complex, high-precision analysis       |
+| `fallback` | GPT-4o-mini          | If the primary provider fails          |
 
-Si un proveedor falla, el sistema conmuta automáticamente al siguiente sin interrumpir el flujo.
+If a provider fails, the system automatically switches to the next one without interrupting the flow.
 
-### Streaming de respuestas (SSE)
+### Response Streaming (SSE)
 
-El chat usa **Server-Sent Events** para transmitir la respuesta token a token. El frontend recibe eventos de distintos tipos:
+The chat uses **Server-Sent Events** to stream the response token by token. The frontend receives different event types:
 
 ```
-data: {"type": "status",  "content": "Clasificando intención..."}
-data: {"type": "thought", "content": "Intención detectada: RAG"}
-data: {"type": "thought", "content": "Buscando en base de datos vectorial..."}
+data: {"type": "status",  "content": "Classifying intent..."}
+data: {"type": "thought", "content": "Detected intent: RAG"}
+data: {"type": "thought", "content": "Searching vector database..."}
 data: {"type": "token",   "content": "Band "}
 data: {"type": "token",   "content": "Steering "}
 data: {"type": "done",    "content": ""}
 ```
 
-Esto permite mostrar el razonamiento interno del agente en tiempo real, antes de que aparezca la respuesta final.
+This allows the agent's internal reasoning to be shown in real time, before the final response appears.
 
-### Análisis Masivo
+### Batch Analysis
 
-Para proyectos grandes Pipe ofrece procesamiento en paralelo:
+For large projects, Pipe offers parallel processing:
 
-1. El usuario sube múltiples `.pcap` de una vez con sus metadatos (SSID, MAC, proyecto)
-2. Cada archivo se encola en **Redis**
-3. Un `QueueWorker` en background procesa las tareas en paralelo
-4. El usuario monitorea el progreso en tiempo real (`procesados / total`)
-5. Al finalizar puede descargar:
-    - **ZIP completo** — capturas originales + PDFs individuales + resumen
-    - **ZIP de reportes** — solo los PDFs
-    - **PDF ejecutivo** — diagnóstico consolidado de toda la sesión
+1. The user uploads multiple `.pcap` files at once along with their metadata (SSID, MAC, project)
+2. Each file is queued in **Redis**
+3. A background `QueueWorker` processes the tasks in parallel
+4. The user monitors progress in real time (`processed / total`)
+5. Once finished, the user can download:
+    - **Full ZIP** — original captures + individual PDFs + summary
+    - **Reports ZIP** — PDFs only
+    - **Executive PDF** — consolidated diagnostic for the entire session
 
-### Base de Datos de Grafos (FalkorDB)
+### Graph Database (FalkorDB)
 
-Cada análisis alimenta un grafo de topología de red con la siguiente estructura:
+Each analysis feeds a network topology graph with the following structure:
 
 ```
 Nodes:
@@ -219,41 +219,41 @@ Relations:
   - (Project)-[MANAGED_BY]→(Vendor)
 ```
 
-El `GraphAgent` puede consultar esta topología con preguntas como:
+The `GraphAgent` can query this topology with questions like:
 
-> _"¿Qué clientes han transitado al AP con BSSID d4:ab:82:39:44:e1?"_
+> _"Which clients have transitioned to the AP with BSSID d4:ab:82:39:44:e1?"_
 
-### Seguridad y Control de Acceso
+### Security and Access Control
 
-La autenticación la gestiona **Keycloak** con tres roles:
+Authentication is managed by **Keycloak** with three roles:
 
-| Rol      | Permisos                                                                    |
-| -------- | --------------------------------------------------------------------------- |
-| `viewer` | Solo lectura de reportes y análisis                                         |
-| `editor` | Subir capturas, generar análisis, exportar PDFs                             |
-| `admin`  | Todo lo anterior + gestión de usuarios, vendors, proyectos y observabilidad |
+| Role      | Permissions                                                              |
+| --------- | -------------------------------------------------------------------------- |
+| `viewer` | Read-only access to reports and analyses                                    |
+| `editor` | Upload captures, generate analyses, export PDFs                             |
+| `admin`  | All of the above + user, vendor, project, and observability management     |
 
-Cada petición al backend pasa primero por **KrakenD** (API Gateway), que valida el JWT con Keycloak y propaga al backend los headers `X-User-Id`, `X-User-Name` y `X-Roles`.
-
----
-
-## 🏗️ Stack Tecnológico
-
-| Capa               | Tecnologías                                              |
-| ------------------ | -------------------------------------------------------- |
-| **Frontend**       | React 18, Vite, TailwindCSS                              |
-| **Backend**        | FastAPI, Python 3.12, Uvicorn                            |
-| **IA / Agentes**   | LiteLLM, LangChain, Groq (Llama 3.3), Gemini 2.0, GPT-4o |
-| **Análisis WiFi**  | tshark / Wireshark, PyShark                              |
-| **Bases de datos** | PostgreSQL, Qdrant (vectorial), FalkorDB (grafos), Redis |
-| **Auth**           | Keycloak (JWT, roles: admin / editor / viewer)           |
-| **Gateway**        | KrakenD                                                  |
-| **Observabilidad** | Langfuse                                                 |
-| **Infra**          | Docker Compose, Nginx, AWS                               |
+Every request to the backend first passes through **KrakenD** (API Gateway), which validates the JWT with Keycloak and forwards the `X-User-Id`, `X-User-Name`, and `X-Roles` headers to the backend.
 
 ---
 
-## ⚙️ Arquitectura resumida
+## 🏗️ Tech Stack
+
+| Layer          | Technologies                                                             |
+| -------------- | --------------------------------------------------------------------------- |
+| **Frontend**       | React 18, Vite, TailwindCSS                                              |
+| **Backend**        | FastAPI, Python 3.12, Uvicorn                                            |
+| **AI / Agents**    | LiteLLM, LangChain, MCP (custom), Groq (Llama 3.3), Gemini 2.0, GPT-4o  |
+| **WiFi Analysis**  | tshark / Wireshark, PyShark                                              |
+| **Databases**      | PostgreSQL, Qdrant (vector), FalkorDB (graph), Redis                     |
+| **Auth**           | Keycloak (JWT, roles: admin / editor / viewer)                          |
+| **Gateway**        | KrakenD                                                                  |
+| **Observability**  | Langfuse                                                                 |
+| **Infra**          | Docker Compose, Nginx, AWS                                               |
+
+---
+
+## ⚙️ Architecture Overview
 
 ```
 Browser (React)
@@ -264,10 +264,10 @@ KrakenD (API Gateway + JWT validation)
     ▼
 FastAPI Backend
     ├─ AgentDispatcher → SecurityTool → IntentClassifier
-    │       ├─ SimpleAgent   (conversación general)
-    │       ├─ RAGAgent      (Qdrant + documentación técnica)
-    │       ├─ ReportAgent   (análisis sobre reportes existentes)
-    │       └─ GraphAgent    (topología de red en FalkorDB)
+    │       ├─ SimpleAgent   (general conversation)
+    │       ├─ RAGAgent      (Qdrant + technical documentation)
+    │       ├─ ReportAgent   (analysis over existing reports)
+    │       └─ GraphAgent    (network topology in FalkorDB)
     │
     ├─ BandSteeringService → tshark → BTMAnalyzer → LLM → PDF
     └─ MassiveAnalysisQueue (Redis + background workers)
@@ -275,11 +275,11 @@ FastAPI Backend
     ┌────┴───────────────────────────────────────┐
     │  PostgreSQL · Qdrant · Redis · FalkorDB    │
     └────────────────────────────────────────────┘
-              ↕ Langfuse (trazas + costos + latencias)
+              ↕ Langfuse (traces + costs + latencies)
 ```
 
 ---
 
 <div align="center">
-<p>Desarrollado por <a href="https://github.com/miguelczz"><b>miguelczz</b></a> · 2026</p>
+<p>Developed by <a href="https://github.com/miguelczz"><b>miguelczz</b></a> · 2026</p>
 </div>
