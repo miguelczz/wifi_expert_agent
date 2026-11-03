@@ -9,6 +9,8 @@
 
 </div>
 
+**English** · [Español](README.es.md)
+
 ---
 
 ## What does the WiFi Expert Agent do?
